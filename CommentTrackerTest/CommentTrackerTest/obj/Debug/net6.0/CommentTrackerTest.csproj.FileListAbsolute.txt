@@ -72,3 +72,5 @@ C:\Users\javid.ibrahimli\Desktop\CommentTrackerTest\CommentTrackerTest\CommentTr
 C:\Users\javid.ibrahimli\Desktop\CommentTrackerTest\CommentTrackerTest\CommentTrackerTest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\javid.ibrahimli\Desktop\CommentTrackerTest\CommentTrackerTest\CommentTrackerTest\obj\Debug\net6.0\CommentTrackerTest.csproj.CopyComplete
 C:\Users\javid.ibrahimli\Desktop\CommentTrackerTest\CommentTrackerTest\CommentTrackerTest\bin\Debug\net6.0\libman.json
+C:\Users\javid.ibrahimli\Desktop\CommentTrackerTest\CommentTrackerTest\CommentTrackerTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\javid.ibrahimli\Desktop\CommentTrackerTest\CommentTrackerTest\CommentTrackerTest\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll

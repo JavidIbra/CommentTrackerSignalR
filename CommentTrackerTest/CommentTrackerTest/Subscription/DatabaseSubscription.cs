@@ -4,7 +4,7 @@ using TableDependency.SqlClient;
 
 namespace CommentTrackerTest.Subscription
 {
-    public class DatabaseSubscription<T> : IDatabaseSubscription where T : class,new()
+    public class DatabaseSubscription<T> : IDatabaseSubscription where T : class, new()
     {
         IConfiguration _configuration;
         IHubContext<TestHub> _hubContext;
@@ -15,7 +15,7 @@ namespace CommentTrackerTest.Subscription
             _hubContext = hubContext;
         }
 
-        SqlTableDependency<T> _sqlTableDependency; 
+        SqlTableDependency<T> _sqlTableDependency;
 
         public void Subscribe(string tableName)
         {
@@ -23,7 +23,9 @@ namespace CommentTrackerTest.Subscription
 
             _sqlTableDependency.OnChanged += async (e, o) =>
             {
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", "salam");
+
+                await _hubContext.Clients.All.SendAsync("receiveMessage", "salam");
+
             };
 
             _sqlTableDependency.OnError += (e, o) =>
@@ -34,7 +36,7 @@ namespace CommentTrackerTest.Subscription
             _sqlTableDependency.Start();
         }
 
-        ~DatabaseSubscription() 
+        ~DatabaseSubscription()
         {
             _sqlTableDependency.Stop();
         }

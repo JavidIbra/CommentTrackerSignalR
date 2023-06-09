@@ -5,6 +5,10 @@
     {
       "library": "signalr@2.4.3",
       "destination": "wwwroot/lib/signalr/"
+    },
+    {
+      "library": "@microsoft/signalr@6.0.16",
+      "destination": "wwwroot/lib/microsoft/signalr/"
     }
   ]
 }

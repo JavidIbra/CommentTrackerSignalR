@@ -6,7 +6,7 @@ namespace CommentTrackerTest.Hubs
     {
         public async Task SendAsync() 
         {
-          await Clients.All.SendAsync("ReceiveMessage", "salam");
+          await Clients.All.SendAsync("receiveMessage", "salam");
         }
     }
 }

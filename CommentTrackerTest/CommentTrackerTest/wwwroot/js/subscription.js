@@ -1,9 +1,12 @@
-﻿"use strict";
+﻿/*"use strict";*/
 
-var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7215/TestHub").build();
+//var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7215/TestHub").build();
+var connection = new signalR.HubConnectionBuilder().withUrl("/TestHub").build();
+connection.start()
 
-//Disable the send button until connection is established.
-document.getElementById("sendButton").disabled = true;
+
+
+//document.getElementById("sendButton").disabled = true;
 
 //connection.on("ReceiveMessage", function (user, message) {
 //    var li = document.createElement("li");
@@ -14,23 +17,22 @@ document.getElementById("sendButton").disabled = true;
 //    li.textContent = `${user} says ${message}`;
 //});
 
-connection.start().then(function () {
-    document.getElementById("sendButton").disabled = false;
-}).catch(function (err) {
-    return console.error(err.toString());
-});
+//connection.start().then(function () {
+//    document.getElementById("sendButton").disabled = false;
+//}).catch(function (err) {
+//    return console.error(err.toString());
+//});
 
-connection.on("ReceiveMessage", message => {
+
+connection.on("receiveMessage", message => {
     alert(message);
 });
 
-
-
-document.getElementById("sendButton").addEventListener("click", function (event) {
-    var user = document.getElementById("userInput").value;
-    var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", user, message).catch(function (err) {
-        return console.error(err.toString());
-    });
-    event.preventDefault();
-});
+//document.getElementById("sendButton").addEventListener("click", function (event) {
+//    var user = document.getElementById("userInput").value;
+//    var message = document.getElementById("messageInput").value;
+//    connection.invoke("SendMessage", user, message).catch(function (err) {
+//        return console.error(err.toString());
+//    });
+//    event.preventDefault();
+//});

@@ -37,7 +37,7 @@ app.UseCors();
 app.UseDatabaseSubscription<DatabaseSubscription<About>>("Abouts");
 
 app.UseRouting();
-
+    
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
